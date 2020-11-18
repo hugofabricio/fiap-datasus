@@ -1,0 +1,16 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "crawler": "node ./src/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cheerio": "^1.0.0-rc.3",
+    "crawler": "^1.2.2",
+    "fast-csv": "^4.3.5",
+    "sleep": "^6.3.0"
+  }
+}
