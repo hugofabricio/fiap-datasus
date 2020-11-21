@@ -908,7 +908,8 @@ B975,"Reovírus, como causa de doenças classificadas em outros capítulos"
 B976,"Parvovírus, como causa de doenças classificadas em outros capítulos"
 B977,"Papilomavírus, como causa de doenças classificadas em outros capítulos"
 B978,"Outros agentes virais, como causa de doenças classificadas em outros capítulos"
-B99,"Doenças infecciosas, outras e as não especificadas"C00,Neoplasia maligna do lábio
+B99,"Doenças infecciosas, outras e as não especificadas"
+C00,Neoplasia maligna do lábio
 C000,Neoplasia maligna do lábio superior externo
 C001,Neoplasia maligna do lábio inferior externo
 C002,"Neoplasia maligna do lábio externo, não especificado"
@@ -5893,7 +5894,8 @@ M995,Estenose de disco intervertebral do canal medular
 M996,Estenose óssea e subluxação dos forames intervertebrais
 M997,Estenose de tecido conjuntivo e do disco dos forames intervertebrais
 M998,Outras lesões biomecânicas
-M999,Lesão biomecânica não especificadaN00,Síndrome nefrítica aguda
+M999,Lesão biomecânica não especificada
+N00,Síndrome nefrítica aguda
 N000,Síndrome nefrítica aguda - anormalidade glomerular minor
 N001,Síndrome nefrítica aguda - lesões glomerulares focais e segmentares
 N002,Síndrome nefrítica aguda - glomerulonefrite membranosa difusa

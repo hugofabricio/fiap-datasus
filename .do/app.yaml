@@ -1,0 +1,21 @@
+name: datasus-fiap
+
+# static_sites:
+# - name: frontend
+#   github:
+#     repo: hugofabricio/fiap-datasus
+#     branch: main
+#     deploy_on_push: true
+#   source_dir: frontend
+#   routes:
+#   - path: /client
+
+services:
+- name: api
+  github:
+    repo: hugofabricio/fiap-datasus
+    branch: main
+    deploy_on_push: true
+  source_dir: api
+  routes:
+  - path: /api
