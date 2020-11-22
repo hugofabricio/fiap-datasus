@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { AppProvider } from '@contexts/appContext'
 import Footer from '@shared/Footer'
 import Header from '@shared/Header'
 import { GlobalStyles, theme } from '@styles'
@@ -10,10 +11,12 @@ import * as S from './styles'
 
 const DefaultLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <GlobalStyles />
-    <Header />
-    <S.Wrapper role="main">{children}</S.Wrapper>
-    <Footer />
+    <AppProvider>
+      <GlobalStyles />
+      <Header />
+      <S.Wrapper role="main">{children}</S.Wrapper>
+      <Footer />
+    </AppProvider>
   </ThemeProvider>
 )
 
