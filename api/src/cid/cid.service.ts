@@ -16,7 +16,7 @@ export class CidService {
 
   async getCid(cidId: string): Promise<Cid> {
     const cid = await this.cidModel
-      .findOne({ cid: cidId })
+      .findOne({ cid: cidId.toUpperCase() })
       .populate('statistics')
       .exec();
 
