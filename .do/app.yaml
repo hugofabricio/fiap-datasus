@@ -1,17 +1,20 @@
 name: datasus-fiap
 
-# static_sites:
-# - name: frontend
-#   github:
-#     repo: hugofabricio/fiap-datasus
-#     branch: main
-#     deploy_on_push: true
-#   source_dir: frontend
-#   routes:
-#   - path: /client
+static_sites:
+- name: frontend
+  build_command: yarn build
+  environment_slug: gatsby
+  github:
+    repo: hugofabricio/fiap-datasus
+    branch: main
+    deploy_on_push: true
+  source_dir: frontend
+  routes:
+  - path: /
 
 services:
 - name: api
+  environment_slug: node-js
   github:
     repo: hugofabricio/fiap-datasus
     branch: main
@@ -19,3 +22,5 @@ services:
   source_dir: api
   routes:
   - path: /api
+
+region: nyc
