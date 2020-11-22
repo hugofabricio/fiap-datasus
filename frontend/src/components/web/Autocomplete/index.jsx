@@ -9,7 +9,7 @@ import Hit from '@web/Hit'
 import * as S from './styles'
 
 const Autocomplete = ({ hits, currentRefinement, refine }) => {
-  const { setCid, setData } = useContext(AppContext)
+  const { setCid } = useContext(AppContext)
 
   const handleOnSubmit = (event) => {
     event.preventDefault()

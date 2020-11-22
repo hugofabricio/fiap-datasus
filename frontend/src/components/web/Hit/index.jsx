@@ -7,7 +7,7 @@ import * as S from './styles'
 const Hit = ({ hit, handleOnClick }) => (
   <S.HitWrapper>
     <S.HitLink onClick={handleOnClick} size={14} uppercase>
-      {hit.cid} - {hit.nome}
+      {hit.cid} - {hit.nome.replace(/['"]+/g, '')}
     </S.HitLink>
   </S.HitWrapper>
 )

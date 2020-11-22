@@ -1,4 +1,4 @@
-import { isString } from '@util/type-check'
+import { isString } from '@utils/type-check'
 import styled from 'styled-components'
 
 export const Loading = styled.svg`

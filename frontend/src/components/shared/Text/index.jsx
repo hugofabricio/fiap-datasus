@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { string } from 'prop-types'
+
 import * as S from './styles'
 
 const Text = ({ children, color, ...rest }) => (
@@ -8,8 +10,12 @@ const Text = ({ children, color, ...rest }) => (
   </S.Wrapper>
 )
 
-Text.propTypes = {
+Text.defaultProps = {
   color: 'neutral700'
+}
+
+Text.propTypes = {
+  color: string
 }
 
 export default Text

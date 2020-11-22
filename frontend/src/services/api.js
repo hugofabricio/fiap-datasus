@@ -1,17 +1,18 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'https://buscasus.hugofabricio.com/api/',
-  timeout: 1000
+  baseURL: 'https://buscasus.hugofabricio.com/api/'
 })
 
 export default {
-  getStatistic: async (cid, year) => {
+  getStatistic: async (cid) => {
     try {
-      const resp = await instance('statistics', { cid, year })
-      console.log(resp)
+      const { data } = await instance.get(`statistics/${cid}`)
+
+      return data
     } catch (error) {
       console.error(error)
+      return []
     }
   }
 }

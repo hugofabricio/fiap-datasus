@@ -1,3 +1,4 @@
+import { isString } from '@utils/type-check'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
@@ -24,5 +25,31 @@ export const Wrapper = styled.p`
     uppercase &&
     `
     text-transform: uppercase;
+  `}
+
+  ${({ marginTop }) =>
+    marginTop &&
+    `
+    margin-top: ${isString(marginTop) ? marginTop : `${marginTop}px`};
+  `}
+
+  ${({ marginRight }) =>
+    marginRight &&
+    `
+    margin-right: ${isString(marginRight) ? marginRight : `${marginRight}px`};
+  `}
+
+  ${({ marginBottom }) =>
+    marginBottom &&
+    `
+    margin-bottom: ${
+      isString(marginBottom) ? marginBottom : `${marginBottom}px`
+    };
+  `}
+
+  ${({ marginLeft }) =>
+    marginLeft &&
+    `
+    margin-left: ${isString(marginLeft) ? marginLeft : `${marginLeft}px`};
   `}
 `

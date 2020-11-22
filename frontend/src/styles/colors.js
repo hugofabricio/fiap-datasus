@@ -1,6 +1,7 @@
 export default {
   neutral0: '#ffffff',
   neutral300: '#F6F9FF',
+  neutral500: '#DDE0EB',
   neutral600: '#ADB5BD',
   neutral700: '#9FA8B2',
   neutral900: '#29292B',

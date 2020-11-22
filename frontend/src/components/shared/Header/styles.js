@@ -20,4 +20,6 @@ export const HeaderContainer = styled(Container)`
   justify-content: space-between;
 `
 
-export const HeaderWrapper = styled.footer``
+export const HeaderWrapper = styled.footer`
+  margin-bottom: 32px;
+`
