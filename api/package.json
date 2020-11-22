@@ -30,7 +30,8 @@
     "mongoose": "^5.10.15",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.3"
+    "rxjs": "^6.6.3",
+    "sleep": "^6.3.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.5.1",

@@ -9,8 +9,15 @@ import { CreateCidDTO } from './dto/cid.dto';
 export class CidService {
   constructor(@InjectModel('Cid') private readonly cidModel: Model<Cid>) {}
 
-  async getCids(): Promise<Cid[]> {
-    const cids = await this.cidModel.find().populate('statistics').exec();
+  async getCids(full: string): Promise<Cid[]> {
+    let cids: Cid[];
+
+    if (full) {
+      cids = await this.cidModel.find().populate('statistics').exec();
+    } else {
+      cids = await this.cidModel.find();
+    }
+
     return cids;
   }
 

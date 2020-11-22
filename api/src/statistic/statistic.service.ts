@@ -3,7 +3,6 @@ import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 
 import { Statistic } from './interfaces/statistic.interface';
-import { CreateStatisticDTO } from './dto/statistic.dto';
 
 @Injectable()
 export class StatisticService {

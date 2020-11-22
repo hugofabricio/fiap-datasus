@@ -4,6 +4,6 @@ import { Controller, Get, Res } from '@nestjs/common';
 export class AppController {
   @Get()
   index(@Res() res) {
-    return res.redirect('https://google.com');
+    return res.redirect('https://datasus.hugofabricio.com');
   }
 }
