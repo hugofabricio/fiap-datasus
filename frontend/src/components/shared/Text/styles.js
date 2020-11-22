@@ -1,5 +1,28 @@
+import { rem } from 'polished'
 import styled from 'styled-components'
 
 export const Wrapper = styled.p`
-  color: ${({ theme, color }) => theme.colors[color]};
+  ${({ theme: { colors }, color }) =>
+    color &&
+    `
+    color: ${colors[color]};
+  `}
+
+  ${({ size }) =>
+    size &&
+    `
+    font-size: ${rem(size)};
+  `}
+
+  ${({ weight }) =>
+    weight &&
+    `
+    font-weight: ${weight};
+  `}
+
+  ${({ uppercase }) =>
+    uppercase &&
+    `
+    text-transform: uppercase;
+  `}
 `

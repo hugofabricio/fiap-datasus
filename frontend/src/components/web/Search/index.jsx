@@ -1,35 +1,58 @@
-import React, { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import React from 'react'
+import {
+  connectAutoComplete,
+  InstantSearch,
+  Configure
+} from 'react-instantsearch-dom'
 
 import { Input } from '@shared/Field'
+import algoliasearch from 'algoliasearch/lite'
 
-import { defaultValues } from './schema'
 import * as S from './styles'
 
-const Search = () => {
-  const [results, setResults] = useState([])
-  const { control, errors } = useForm({ defaultValues })
+const algolia = {
+  appId: process.env.GATSBY_ALGOLIA_APP_ID,
+  searchOnlyApiKey: process.env.GATSBY_ALGOLIA_SEARCH_KEY,
+  indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME
+}
 
-  const handleChange = async (data) => {
-    console.log(data)
-  }
+const searchClient = algoliasearch(algolia.appId, algolia.searchOnlyApiKey)
 
+const Autocomplete = ({ hits, currentRefinement, refine }) => {
   return (
     <S.SearchWrapper>
       <S.SearchForm>
         <Input
           icon="search"
-          control={control}
           type="search"
           name="q"
           label="CID10 ou nome da doença"
-          onChange={handleChange}
-          errors={errors}
+          value={currentRefinement}
+          onChange={(event) => refine(event.currentTarget.value)}
         />
       </S.SearchForm>
-      <S.SearchResults></S.SearchResults>
+      {currentRefinement && (
+        <S.SearchResults>
+          {hits.map((hit) => (
+            <S.SearchItem key={hit.objectID}>
+              <S.SearchLink onClick={() => alert(hit.nome)} size={14} uppercase>
+                {hit.cid} - {hit.nome}
+              </S.SearchLink>
+            </S.SearchItem>
+          ))}
+        </S.SearchResults>
+      )}
     </S.SearchWrapper>
   )
 }
+
+const ConnectAutocomplete = connectAutoComplete(Autocomplete)
+
+const Search = () => (
+  <InstantSearch searchClient={searchClient} indexName={algolia.indexName}>
+    <Configure hitsPerPage={3} />
+    <ConnectAutocomplete />
+  </InstantSearch>
+)
 
 export default Search

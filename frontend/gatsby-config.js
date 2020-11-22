@@ -66,9 +66,9 @@ const plugins = [
   {
     resolve: `gatsby-plugin-algolia-search`,
     options: {
-      appId: process.env.ALGOLIA_APP_ID,
-      apiKey: process.env.ALGOLIA_SEARCH_KEY,
-      indexName: process.env.ALGOLIA_INDEX_NAME
+      appId: process.env.GATSBY_ALGOLIA_APP_ID,
+      apiKey: process.env.GATSBY_ALGOLIA_SEARCH_KEY,
+      indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME
     }
   },
   `gatsby-plugin-preload-link-crossorigin`,

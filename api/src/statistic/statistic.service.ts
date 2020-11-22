@@ -18,9 +18,9 @@ export class StatisticService {
     return statistics;
   }
 
-  async getStatistic(cidId: string): Promise<Statistic> {
+  async getStatistic(cidId: string, year: string): Promise<Statistic> {
     const statistic = await this.statisticModel
-      .findOne({ cid: cidId.toUpperCase() })
+      .findOne({ cid: cidId.toUpperCase(), year })
       .populate('disease')
       .exec();
     return statistic;

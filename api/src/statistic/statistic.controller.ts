@@ -28,8 +28,8 @@ export class StatisticController {
   }
 
   @Get(':cid')
-  async show(@Res() res, @Param('cid') cidId) {
-    const result = await this.statisticService.getStatistic(cidId);
+  async show(@Res() res, @Param('cid') cidId, @Param('year') year) {
+    const result = await this.statisticService.getStatistic(cidId, year);
 
     if (!result) throw new NotFoundException('CID10 não encontrado.');
     return res.status(HttpStatus.OK).json(result);

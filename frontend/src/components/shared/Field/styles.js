@@ -32,7 +32,7 @@ export const Input = styled.input`
   line-height: 1.5;
   background-clip: padding-box;
   appearance: none;
-  border-radius: 0.25rem;
+  border-radius: ${rem(8)};
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   padding: ${({ hasIcon }) =>
     hasIcon
