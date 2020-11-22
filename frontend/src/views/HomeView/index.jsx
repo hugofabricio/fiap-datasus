@@ -1,5 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-const ErrorView = () => <></>
+import { AppContext } from '@contexts/appContext'
 
-export default ErrorView
+const HomeView = () => {
+  const { cid } = useContext(AppContext)
+
+  return (
+    <>
+      <div>{cid && <p>{cid}</p>}</div>
+    </>
+  )
+}
+
+export default HomeView
