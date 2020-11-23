@@ -3,8 +3,9 @@ import {
   Get,
   HttpStatus,
   Res,
+  Req,
+  // Post,
   Param,
-  Query,
   NotFoundException,
 } from '@nestjs/common';
 // import * as csv from 'fast-csv';
@@ -17,10 +18,10 @@ export class CidController {
   constructor(private cidService: CidService) {}
 
   @Get()
-  async index(@Res() res, @Query() query) {
-    const result = await this.cidService.getCids(query['full']);
+  async index(@Res() res, @Req() req) {
+    const results = await this.cidService.getCids(req.query);
 
-    return res.status(HttpStatus.OK).json({ result });
+    return res.status(HttpStatus.OK).json({ results });
   }
 
   @Get(':cid')
@@ -36,14 +37,14 @@ export class CidController {
   //   fs.createReadStream(
   //     path.resolve(__dirname, '..', '..', 'public', 'cid10.csv'),
   //   )
-  //     .pipe(csv.parse({ headers: true, skipRows: 15000, maxRows: 2500 }))
+  //     .pipe(csv.parse({ headers: true }))
   //     .on('error', (error) => console.error(error))
   //     .on('data', async (row) => {
   //       console.log(row.cid, row.nome);
 
   //       await this.cidService.createCid({
   //         cid: row.cid,
-  //         name: row.nome,
+  //         name: row.nome.replace(/['"]+/g, ''),
   //       });
   //     });
 

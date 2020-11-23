@@ -3,12 +3,14 @@ import {
   Get,
   HttpStatus,
   Res,
+  Req,
   Param,
+  // Post,
   NotFoundException,
 } from '@nestjs/common';
 
 import { StatisticService } from './statistic.service';
-import { CidService } from '../cid/cid.service';
+// import { CidService } from '../cid/cid.service';
 // import * as csv from 'fast-csv';
 // import * as fs from 'fs';
 // import * as path from 'path';
@@ -16,22 +18,22 @@ import { CidService } from '../cid/cid.service';
 @Controller('statistics')
 export class StatisticController {
   constructor(
-    private statisticService: StatisticService,
-    private cidService: CidService,
+    private statisticService: StatisticService, // private cidService: CidService,
   ) {}
 
-  @Get()
-  async index(@Res() res) {
-    const result = await this.statisticService.getStatistics();
+  @Get(':cid')
+  async index(@Res() res, @Param('cid') cidId, @Req() req) {
+    const results = await this.statisticService.getStatistics(cidId, req.query);
 
-    return res.status(HttpStatus.OK).json({ result });
+    return res.status(HttpStatus.OK).json({ results });
   }
 
-  @Get(':cid')
+  @Get(':cid/:year')
   async show(@Res() res, @Param('cid') cidId, @Param('year') year) {
     const result = await this.statisticService.getStatistic(cidId, year);
 
     if (!result) throw new NotFoundException('CID10 não encontrado.');
+
     return res.status(HttpStatus.OK).json(result);
   }
 
@@ -66,7 +68,7 @@ export class StatisticController {
   //   fs.createReadStream(
   //     path.resolve(__dirname, '..', '..', 'public', 'dataset.csv'),
   //   )
-  //     .pipe(csv.parse({ headers: true, skipRows: 40000, maxRows: 2500 }))
+  //     .pipe(csv.parse({ headers: true, skipRows: 30000, maxRows: 10000 }))
   //     .on('error', (error) => console.error(error))
   //     .on('data', async (row) => {
   //       const cid = await this.cidService.getCid(row.cid);

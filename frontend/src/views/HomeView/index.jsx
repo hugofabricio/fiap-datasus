@@ -27,7 +27,7 @@ const HomeView = () => {
                   <>
                     <S.DashboardHeading bgColor="neutral300" marginBottom={32}>
                       <Text as="h2" size={24} weight={600} marginRight={24}>
-                        {data?.disease?.name.replace(/['"]+/g, '')}
+                        {data.cid} - {data?.disease?.name.replace(/['"]+/g, '')}
                       </Text>
                       {data.cases && (
                         <Text size={24} weight={600} color="neutral900">

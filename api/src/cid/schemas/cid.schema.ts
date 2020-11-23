@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 
-export const CidSchema = new Schema({
+const CidSchema = new Schema({
   cid: { type: String, required: true },
   name: { type: String, required: true },
   statistics: [
@@ -10,3 +10,5 @@ export const CidSchema = new Schema({
     },
   ],
 });
+
+export { CidSchema };

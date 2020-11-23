@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-
+import { QueryOptions } from '../config/query-options.config';
 import { Cid } from './interfaces/cid.interface';
 import { CreateCidDTO } from './dto/cid.dto';
 
@@ -9,16 +9,35 @@ import { CreateCidDTO } from './dto/cid.dto';
 export class CidService {
   constructor(@InjectModel('Cid') private readonly cidModel: Model<Cid>) {}
 
-  async getCids(full: string): Promise<Cid[]> {
-    let cids: Cid[];
-
-    if (full) {
-      cids = await this.cidModel.find().populate('statistics').exec();
-    } else {
-      cids = await this.cidModel.find();
+  async getCids(options: QueryOptions): Promise<Cid[]> {
+    if (!options.limit || options?.limit > 100) {
+      options.limit = 10;
     }
 
-    return cids;
+    if (options.fields) {
+      const cids = await this.cidModel
+        .find(
+          { [options.fields]: { $regex: `.*${options.text}.*` } },
+          (err, doc) => {
+            return doc;
+          },
+        )
+        .populate('statistics')
+        .skip(Number(options.offset))
+        .limit(Number(options.limit))
+        .exec();
+
+      return cids;
+    } else {
+      const cids = await this.cidModel
+        .find()
+        .populate('statistics')
+        .skip(Number(options.offset))
+        .limit(Number(options.limit))
+        .exec();
+
+      return cids;
+    }
   }
 
   async getCid(cidId: string): Promise<Cid> {
