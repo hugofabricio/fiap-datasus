@@ -1,6 +1,14 @@
 import { isString } from '@utils/type-check'
-import { rem } from 'polished'
+import { between } from 'polished'
 import styled from 'styled-components'
+
+const minSize = (size) => {
+  if (size >= 24) {
+    size = size / 1.2
+  }
+
+  return size
+}
 
 export const Wrapper = styled.p`
   ${({ theme: { colors }, color }) =>
@@ -12,7 +20,7 @@ export const Wrapper = styled.p`
   ${({ size }) =>
     size &&
     `
-    font-size: ${rem(size)};
+    font-size: ${between(`${minSize(size)}px`, `${size}px`)};
   `}
 
   ${({ weight }) =>

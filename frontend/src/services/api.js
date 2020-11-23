@@ -5,9 +5,9 @@ const instance = axios.create({
 })
 
 export default {
-  getStatistic: async (cid) => {
+  getStatistic: async (cid, year) => {
     try {
-      const { data } = await instance.get(`statistics/${cid}`)
+      const { data } = await instance.get(`statistics/${cid}/${year}`)
 
       return data
     } catch (error) {

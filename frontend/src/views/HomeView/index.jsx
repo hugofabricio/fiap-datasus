@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-awesome-styled-grid'
 import { AppContext } from '@contexts/appContext'
 import Illustration from '@helpers/Illustration'
 import Loading from '@helpers/Loading'
+import Vector from '@helpers/Vector'
 import Text from '@shared/Text'
 import Tile from '@web/Tile'
 
@@ -21,7 +22,7 @@ const HomeView = () => {
           </S.DashboardAlert>
         ) : (
           <>
-            {data && (
+            {data ? (
               <>
                 {data.disease ? (
                   <>
@@ -79,6 +80,15 @@ const HomeView = () => {
                   </S.DashboardAlert>
                 )}
               </>
+            ) : (
+              <S.DashboardAlert>
+                <Vector
+                  color="neutral500"
+                  width={200}
+                  name="search"
+                  opacity={0.3}
+                />
+              </S.DashboardAlert>
             )}
           </>
         )}

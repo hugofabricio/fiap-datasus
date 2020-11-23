@@ -7,6 +7,7 @@ export const AppContext = React.createContext()
 
 export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
+  const [modalState, setModalState] = useState('')
   const [cid, setCid] = useState('')
   const [data, setData] = useState(null)
 
@@ -15,7 +16,7 @@ export const AppProvider = ({ children }) => {
       setLoading(true)
 
       const fetchData = async () => {
-        const resp = await api.getStatistic(cid)
+        const resp = await api.getStatistic(cid, 2019)
 
         setData(resp)
         setLoading(false)
@@ -32,7 +33,9 @@ export const AppProvider = ({ children }) => {
         cid,
         setCid,
         data,
-        setData
+        setData,
+        modalState,
+        setModalState
       }}
     >
       {children}

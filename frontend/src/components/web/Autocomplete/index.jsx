@@ -30,6 +30,7 @@ const Autocomplete = ({ hits, currentRefinement, refine }) => {
           label="CID10 ou nome da doença"
           value={currentRefinement}
           onChange={(event) => refine(event.currentTarget.value)}
+          autoFocus
         />
       </S.SearchForm>
       {currentRefinement && (
