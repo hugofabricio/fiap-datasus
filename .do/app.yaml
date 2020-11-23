@@ -1,4 +1,4 @@
-name: datasus-fiap
+name: buscasus
 
 static_sites:
 - name: frontend
