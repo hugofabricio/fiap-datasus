@@ -1,9 +1,9 @@
 const config = {
   siteMetadata: {
     title: `BuscaSUS`,
-    description: ``,
+    description: `API com informações do SUS no estado de São Paulo.`,
     author: `@hugofabriicio`,
-    siteUrl: `https://buscasus.hugofabricio.com`,
+    siteUrl: `https://buscasus.com.br`,
     ogImage: `images/og-image.png`
   }
 }

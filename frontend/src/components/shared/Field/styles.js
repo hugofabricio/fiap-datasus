@@ -49,6 +49,19 @@ export const Input = styled.input`
       outline: 0;
       box-shadow: 0 0 0 0.25rem ${rgba(colors.blue500, 0.25)};
     }
+
+    &::placeholder {
+      color: ${colors.neutral600};
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      color: ${colors.neutral600};
+    }
+
+    &::-ms-input-placeholder {
+      color: ${colors.neutral600};
+    }
   `}
 
   @media (prefers-reduced-motion: reduce) {

@@ -1,3 +1,4 @@
+import { rem } from 'polished'
 import styled from 'styled-components'
 
 export const StatisticsItem = styled.div`
@@ -14,9 +15,27 @@ export const StatisticsItem = styled.div`
   }
 `
 
+export const StatisticsBadges = styled.div``
+
+export const StatisticsBadge = styled.span`
+  font-size: ${rem(12)};
+  font-weight: 700;
+  letter-spacing: 1px;
+  background-color: ${({ theme: { colors } }) => colors.neutral700};
+  color: ${({ theme: { colors } }) => colors.neutral0};
+  border-radius: 24px;
+  padding: 2px 8px;
+  text-indent: 1px;
+  display: inline-block;
+
+  &:last-of-type {
+    margin-left: 4px;
+  }
+`
+
 export const StatisticsWrapper = styled.div`
   background-color: ${({ theme: { colors } }) => colors.neutral300};
   border-radius: 20px;
   padding: 24px;
-  margin-top: 32px;
+  margin-bottom: 32px;
 `

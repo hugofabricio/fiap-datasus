@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const minSize = (size) => {
   if (size >= 24) {
-    size = size / 1.2
+    size = size / 1.4
   }
 
   return size

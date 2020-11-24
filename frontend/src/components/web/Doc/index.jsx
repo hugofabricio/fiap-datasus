@@ -1,6 +1,7 @@
 import React, { useRef, useContext } from 'react'
 
 import { AppContext } from '@contexts/appContext'
+import Vector from '@helpers/Vector'
 import useEscKeyPress from '@hooks/use-esc-key-press'
 import useOnClickOutside from '@hooks/use-on-click-outside'
 import Text from '@shared/Text'
@@ -19,6 +20,10 @@ const Doc = () => {
       <S.DocWrapper isOpen={modalState} ref={ref} className="overlay">
         <S.ModalDialog>
           <S.ModalDialogContent>
+            <S.ModalClose onClick={() => setModalState(false)} color="blue500">
+              <Vector name="close" color="neutral0" width={16} height={16} />
+            </S.ModalClose>
+
             <Text as="h2" size={24} weight={600} marginBottom={24}>
               API
             </Text>

@@ -9,7 +9,8 @@ export const TileIcon = styled.div`
   margin-right: 24px;
   flex: 1;
 
-  ${media.lessThan('xs')`
+  ${media.lessThan('sm')`
+    width: 100%;
     margin-right: 0;
     margin-bottom: 24px;
   `}
@@ -42,8 +43,5 @@ export const TileWrapper = styled.div`
   background-color: ${({ theme: { colors } }) => colors.neutral300};
   border-radius: 20px;
   padding: 24px;
-
-  ${media.lessThan('md')`
-    margin-bottom: 30px;
-  `}
+  margin-bottom: 30px;
 `

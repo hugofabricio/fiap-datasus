@@ -1,7 +1,21 @@
+import Button from '@shared/Button'
 import media from '@utils/media'
 import { rem } from 'polished'
 import { rgba } from 'polished'
 import styled from 'styled-components'
+
+export const ModalClose = styled(Button)`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 100%;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+`
 
 export const ModalDialogContent = styled.div`
   position: relative;
