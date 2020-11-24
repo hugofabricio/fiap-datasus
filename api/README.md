@@ -9,9 +9,9 @@
 
 2. **Configurar variáveis de ambiente.**
 
-   ```env
-  PORT=5000
-  DB_URI="mongo_uri"
+   ```
+      PORT=5000
+      DB_URI="mongo_uri"
    ```
 
 3. **Rodar em modo de desenvolvimento.**

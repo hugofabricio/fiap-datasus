@@ -9,7 +9,7 @@
 
 2. **Configurar variáveis de ambiente do Algolia (www.algolia.com)**
 
-   ```env
+   ```
     GATSBY_ALGOLIA_APP_ID=
     GATSBY_ALGOLIA_SEARCH_KEY=
     GATSBY_ALGOLIA_INDEX_NAME=
