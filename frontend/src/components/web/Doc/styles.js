@@ -1,4 +1,5 @@
 import media from '@utils/media'
+import { rem } from 'polished'
 import { rgba } from 'polished'
 import styled from 'styled-components'
 
@@ -55,4 +56,45 @@ export const DocWrapper = styled.div`
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   background-color: ${({ theme: { colors } }) => rgba(colors.neutral700, 0.9)};
+`
+
+export const DocItem = styled.div`
+  &:not(:last-of-type) {
+    margin-bottom: 12px;
+  }
+`
+
+export const DocReq = styled.div`
+  background-color: ${({ theme: { colors } }) => colors.neutral800};
+  padding: 6px 12px;
+  letter-spacing: 2px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  span {
+    &.method {
+      color: ${({ theme: { colors } }) => colors.teal500};
+    }
+
+    &.url {
+      color: ${({ theme: { colors } }) => colors.yellow500};
+    }
+
+    &.param {
+      color: ${({ theme: { colors } }) => colors.red500};
+    }
+  }
+`
+
+export const DocRes = styled.div`
+  background-color: ${({ theme: { colors } }) => colors.neutral750};
+  padding: 12px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+`
+
+export const DocCode = styled.pre`
+  font-size: ${rem(12)};
+  max-height: 200px;
+  overflow-y: auto;
 `

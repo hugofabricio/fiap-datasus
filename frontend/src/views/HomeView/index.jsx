@@ -6,6 +6,7 @@ import Illustration from '@helpers/Illustration'
 import Loading from '@helpers/Loading'
 import Vector from '@helpers/Vector'
 import Text from '@shared/Text'
+import Statistics from '@web/Statistics'
 import Tile from '@web/Tile'
 
 import * as S from './styles'
@@ -31,7 +32,12 @@ const HomeView = () => {
                         {data.cid} - {data?.disease?.name.replace(/['"]+/g, '')}
                       </Text>
                       {data.cases && (
-                        <Text size={24} weight={600} color="neutral900">
+                        <Text
+                          size={24}
+                          weight={600}
+                          color="neutral900"
+                          style={{ flexShrink: 0 }}
+                        >
                           {data.cases} caso{data.cases > 1 && 's'}
                         </Text>
                       )}
@@ -67,6 +73,9 @@ const HomeView = () => {
                             value={data.cases_sp}
                             percent={data.percent_sp}
                           />
+                        </Col>
+                        <Col xs={12}>
+                          <Statistics data={data} />
                         </Col>
                       </Row>
                     </S.DashboardContent>
