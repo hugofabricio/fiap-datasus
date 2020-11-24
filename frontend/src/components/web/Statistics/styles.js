@@ -21,7 +21,7 @@ export const StatisticsBadge = styled.span`
   font-size: ${rem(12)};
   font-weight: 700;
   letter-spacing: 1px;
-  background-color: ${({ theme: { colors } }) => colors.neutral700};
+  background-color: ${({ theme: { colors }, color }) => colors[color]};
   color: ${({ theme: { colors } }) => colors.neutral0};
   border-radius: 24px;
   padding: 2px 8px;

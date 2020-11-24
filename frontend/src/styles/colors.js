@@ -11,5 +11,12 @@ export default {
   orange500: '#FF7F5C',
   teal500: '#72CEC1',
   yellow500: '#FDC500',
-  red500: '#ED145B'
+  red500: '#ED145B',
+
+  chart100: '#ffba08',
+  chart200: '#faa307',
+  chart300: '#f48c06',
+  chart400: '#e85d04',
+  chart500: '#dc2f02',
+  chart600: '#d00000'
 }
