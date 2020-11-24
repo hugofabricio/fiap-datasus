@@ -1,15 +1,14 @@
-# BuscaSUS
-- [buscasus.com.br](https://buscasus.com.br)
-Aplicação desenvolvida para o desafio da SANOFI e FIAP.
+> # BuscaSUS
+> Aplicação desenvolvida para o desafio da SANOFI e FIAP.
+> [buscasus.com.br](https://buscasus.com.br)
+> [slides](https://github.com/hugofabricio/fiap-datasus/blob/main/buscasus.pdf)
 
 ![buscasus](./dashboard.jpg)
 
-- [slides](https://github.com/hugofabricio/fiap-datasus/blob/main/buscasus.pdf)
-- [dataset](./dataset/dataset.csv)
-- [cid10](./dataset/cid10.csv)
-
 ## Tratamento
 - R Studio
+- [dataset](./dataset/dataset.csv)
+- [cid10](./dataset/cid10.csv)
 
 ## Crawler
 - Node
