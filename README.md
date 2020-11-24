@@ -1,19 +1,12 @@
 # BuscaSUS
 - [buscasus.com.br](https://buscasus.com.br)
-- [slides](https://github.com/hugofabricio/fiap-datasus/blob/main/buscasus.pdf)
-- [dataset](./dataset/dataset.csv)
-- [cid10](./dataset/cid10.csv)
-
 Aplicação desenvolvida para o desafio da SANOFI e FIAP.
 
 ![buscasus](./dashboard.jpg)
 
-## Equipe
-- [Hugo Fabricio](https://linkedin.com/in/hugo-fabriicio)
-- [Paula Pompeo](https://linkedin.com/in/paulapompeo/)
-- [Tamires de Lima](https://linkedin.com/in/tamiresdelima/)
-- [Ana Carolina](https://linkedin.com/in/ana-carolina-almeida-5b957b182/)
-- [Diego Scagnolato](https://linkedin.com/in/diego-decio-scagnolato/)
+- [slides](https://github.com/hugofabricio/fiap-datasus/blob/main/buscasus.pdf)
+- [dataset](./dataset/dataset.csv)
+- [cid10](./dataset/cid10.csv)
 
 ## Tratamento
 - R Studio
@@ -233,3 +226,10 @@ Aplicação desenvolvida para o desafio da SANOFI e FIAP.
       },
       "__v": 0
     }
+
+## Equipe
+- [Hugo Fabricio](https://linkedin.com/in/hugo-fabriicio)
+- [Paula Pompeo](https://linkedin.com/in/paulapompeo/)
+- [Tamires de Lima](https://linkedin.com/in/tamiresdelima/)
+- [Ana Carolina](https://linkedin.com/in/ana-carolina-almeida-5b957b182/)
+- [Diego Scagnolato](https://linkedin.com/in/diego-decio-scagnolato/)
