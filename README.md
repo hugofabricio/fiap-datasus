@@ -1,13 +1,12 @@
 # BuscaSUS
-[buscasus.com.br](https://buscasus.com.br)
-
-Aplicação desenvolvida para o desafio da SANOFI e FIAP.
-
-- ![buscasus](./dashboard.jpg)
-
+- [buscasus.com.br](https://buscasus.com.br)
 - [slides](https://github.com/hugofabricio/fiap-datasus/blob/main/buscasus.pdf)
 - [dataset](./dataset/dataset.csv)
 - [cid10](./dataset/cid10.csv)
+
+Aplicação desenvolvida para o desafio da SANOFI e FIAP.
+
+![buscasus](./dashboard.jpg)
 
 ## Equipe
 - [Hugo Fabricio](https://linkedin.com/in/hugo-fabriicio)
