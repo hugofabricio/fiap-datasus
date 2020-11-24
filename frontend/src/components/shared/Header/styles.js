@@ -1,5 +1,6 @@
 import { Container } from 'react-awesome-styled-grid'
 
+import Button from '@shared/Button'
 import media from '@utils/media'
 import styled from 'styled-components'
 
@@ -11,6 +12,16 @@ export const HeaderBrand = styled.div`
     text-align: center;
     margin-right: 0;
     margin-bottom: 24px;
+  `}
+`
+
+export const HeaderButton = styled(Button)`
+  &:first-of-type {
+    margin-right: 12px;
+  }
+
+  ${media.lessThan('sm')`
+    width: 50%;
   `}
 `
 
@@ -28,6 +39,7 @@ export const HeaderUtil = styled.div`
 
   ${media.lessThan('xs')`
     width: 100%;
+    display: flex;
     margin-left: 0;
 
     > a {

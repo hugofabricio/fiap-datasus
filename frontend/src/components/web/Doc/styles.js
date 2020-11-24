@@ -31,7 +31,7 @@ export const ModalDialogContent = styled.div`
   border-radius: 20px;
 
   ${media.lessThan('sm')`
-    padding: 48px 24px;
+    padding: 24px;
   `}
 `
 
@@ -51,8 +51,9 @@ export const ModalDialog = styled.div`
   `}
 
   ${media.lessThan('sm')`
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
+    padding: 32px 0;
   `}
 `
 
@@ -109,6 +110,9 @@ export const DocRes = styled.div`
 
 export const DocCode = styled.pre`
   font-size: ${rem(12)};
-  max-height: 200px;
-  overflow-y: auto;
+
+  ${media.greaterThan('sm')`
+    max-height: 200px;
+    overflow-y: auto;
+  `}
 `

@@ -1,9 +1,7 @@
 import React, { useContext } from 'react'
 
 import { AppContext } from '@contexts/appContext'
-import Link from '@helpers/Link'
 import Brand from '@shared/Brand'
-import Button from '@shared/Button'
 import Search from '@web/Search'
 
 import * as S from './styles'
@@ -21,20 +19,16 @@ const Header = () => {
           <Search />
         </S.HeaderSearch>
         <S.HeaderUtil>
-          <Button
-            onClick={() => setModalState(true)}
-            title="API"
-            marginRight={12}
-          >
+          <S.HeaderButton onClick={() => setModalState(true)} title="API">
             API
-          </Button>
-          <Button
+          </S.HeaderButton>
+          <S.HeaderButton
             href="https://github.com/hugofabricio/fiap-datasus"
             target="_blank"
             title="GitHub"
           >
             GitHub
-          </Button>
+          </S.HeaderButton>
         </S.HeaderUtil>
       </S.HeaderContainer>
     </S.HeaderWrapper>

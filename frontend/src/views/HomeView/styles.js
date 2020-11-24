@@ -20,7 +20,7 @@ export const DashboardHeading = styled(Heading)`
 export const DashboardContent = styled(Content)``
 
 export const DashboardAlert = styled.div`
-  padding: 100px 32px 0;
+  padding: 48px 32px 0;
   width: 100%;
   display: flex;
   justify-content: center;
