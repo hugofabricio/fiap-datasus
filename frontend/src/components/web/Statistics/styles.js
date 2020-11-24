@@ -4,10 +4,7 @@ import styled from 'styled-components'
 export const StatisticsItem = styled.div`
   display: flex;
   justify-content: space-between;
-
-  &:not(:first-of-type) {
-    padding-top: 12px;
-  }
+  padding-top: 12px;
 
   &:not(:last-of-type) {
     padding-bottom: 12px;
