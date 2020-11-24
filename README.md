@@ -1,7 +1,7 @@
 > # BuscaSUS
 > Aplicação desenvolvida para o desafio da SANOFI e FIAP.
-> [buscasus.com.br](https://buscasus.com.br)
-> [slides](https://github.com/hugofabricio/fiap-datasus/blob/main/buscasus.pdf)
+> - [buscasus.com.br](https://buscasus.com.br)
+> - [slides](https://github.com/hugofabricio/fiap-datasus/blob/main/buscasus.pdf)
 
 ![buscasus](./dashboard.jpg)
 
