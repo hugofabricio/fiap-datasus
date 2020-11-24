@@ -31,7 +31,7 @@ export const ModalDialogContent = styled.div`
   border-radius: 20px;
 
   ${media.lessThan('sm')`
-    padding: 24px;
+    padding: 48px 24px;
   `}
 `
 

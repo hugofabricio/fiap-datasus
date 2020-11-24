@@ -1,7 +1,7 @@
 import { rem, rgba } from 'polished'
 import styled from 'styled-components'
 
-export const SearchForm = styled.form``
+export const SearchForm = styled.div``
 
 export const SearchResults = styled.ul`
   position: absolute;

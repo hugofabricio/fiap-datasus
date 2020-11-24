@@ -46,4 +46,28 @@ export const ButtonWrapper = styled.a`
   &:disabled {
     pointer-events: none;
   }
+
+  ${({ marginTop }) =>
+    marginTop &&
+    `
+    margin-top: ${marginTop}px;
+  `}
+
+  ${({ marginBotton }) =>
+    marginBotton &&
+    `
+    margin-botton: ${marginBotton}px;
+  `}
+
+  ${({ marginLeft }) =>
+    marginLeft &&
+    `
+    margin-left: ${marginLeft}px;
+  `}
+
+  ${({ marginRight }) =>
+    marginRight &&
+    `
+    margin-right: ${marginRight}px;
+  `}
 `

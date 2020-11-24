@@ -4,11 +4,7 @@ import media from '@utils/media'
 import styled from 'styled-components'
 
 export const HeaderBrand = styled.div`
-  margin-right: 60px;
-
-  ${media.lessThan('md')`
-    margin-right: 30px;
-  `}
+  margin-right: 32px;
 
   ${media.lessThan('sm')`
     width: 100%;
@@ -28,11 +24,7 @@ export const HeaderSearch = styled.div`
 `
 
 export const HeaderUtil = styled.div`
-  margin-left: 60px;
-
-  ${media.lessThan('md')`
-    margin-left: 30px;
-  `}
+  margin-left: 32px;
 
   ${media.lessThan('xs')`
     width: 100%;

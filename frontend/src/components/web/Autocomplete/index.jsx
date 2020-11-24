@@ -11,10 +11,6 @@ import * as S from './styles'
 const Autocomplete = ({ hits, currentRefinement, refine }) => {
   const { setCid } = useContext(AppContext)
 
-  const handleOnSubmit = (event) => {
-    event.preventDefault()
-  }
-
   const handleOnClick = (cid) => {
     setCid(cid)
     refine()
@@ -22,7 +18,7 @@ const Autocomplete = ({ hits, currentRefinement, refine }) => {
 
   return (
     <S.AutocompleteWrapper>
-      <S.SearchForm onSubmit={handleOnSubmit}>
+      <S.SearchForm>
         <Input
           icon="search"
           type="search"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { string, node } from 'prop-types'
+import { string, node, oneOfType, number } from 'prop-types'
 
 import * as S from './styles'
 
@@ -16,7 +16,11 @@ Button.defaultProps = {
 
 Button.propTypes = {
   children: node.isRequired,
-  color: string
+  color: string,
+  marginTop: oneOfType([number, string]),
+  marginRight: oneOfType([number, string]),
+  marginBottom: oneOfType([number, string]),
+  marginLeft: oneOfType([number, string])
 }
 
 export default Button

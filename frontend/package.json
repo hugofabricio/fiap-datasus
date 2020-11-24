@@ -45,6 +45,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^6.11.4",
     "react-instantsearch-dom": "^6.8.2",
+    "react-scrolllock": "^5.0.1",
     "react-use": "^15.3.4",
     "styled-components": "^5.2.1",
     "styled-media-query": "^2.1.2",

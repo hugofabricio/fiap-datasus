@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollLock from 'react-scrolllock'
 
 import { AppProvider } from '@contexts/appContext'
 import Footer from '@shared/Footer'
@@ -15,7 +16,9 @@ const DefaultLayout = ({ children }) => (
     <AppProvider>
       <GlobalStyles />
       <Header />
-      <S.Wrapper role="main">{children}</S.Wrapper>
+      <ScrollLock isActive={false}>
+        <S.Wrapper role="main">{children}</S.Wrapper>
+      </ScrollLock>
       <Footer />
       <Doc />
     </AppProvider>

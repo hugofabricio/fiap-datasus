@@ -4,6 +4,9 @@
 Aplicação desenvolvida para o desafio da SANOFI e FIAP.
 
 ![buscasus](./dashboard.jpg)
+![slides](https://github.com/hugofabricio/fiap-datasus/blob/main/buscasus.pdf)
+![dataset](./dataset/dataset.csv)
+![cid10](./dataset/cid10.csv)
 
 ## Equipe
 - [Hugo Fabricio](https://linkedin.com/in/hugo-fabriicio)
@@ -11,6 +14,13 @@ Aplicação desenvolvida para o desafio da SANOFI e FIAP.
 - [Tamires de Lima](https://linkedin.com/in/tamiresdelima/)
 - [Ana Carolina](https://linkedin.com/in/ana-carolina-almeida-5b957b182/)
 - [Diego Scagnolato](https://linkedin.com/in/diego-decio-scagnolato/)
+
+## Tratamento
+- R Studio
+
+## Crawler
+- Node
+- Cheerio
 
 ## Frontend
 - GatsbyJS
@@ -178,7 +188,7 @@ Aplicação desenvolvida para o desafio da SANOFI e FIAP.
       ]
     }
 
-## Retorna as estátisticas de um determinado ano de um CID10
+## Retorna as estátisticas de um CID10 em determinado ano
 
 ### Request
 

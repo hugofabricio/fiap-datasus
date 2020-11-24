@@ -1,4 +1,5 @@
 import React, { useRef, useContext } from 'react'
+import ScrollLock, { TouchScrollable } from 'react-scrolllock'
 
 import { AppContext } from '@contexts/appContext'
 import Vector from '@helpers/Vector'
@@ -17,52 +18,57 @@ const Doc = () => {
 
   return (
     <>
+      <ScrollLock isActive={modalState} />
       <S.DocWrapper isOpen={modalState} ref={ref} className="overlay">
-        <S.ModalDialog>
-          <S.ModalDialogContent>
-            <S.ModalClose onClick={() => setModalState(false)} color="blue500">
-              <Vector name="close" color="neutral0" width={16} height={16} />
-            </S.ModalClose>
+        <TouchScrollable>
+          <S.ModalDialog>
+            <S.ModalDialogContent>
+              <S.ModalClose
+                onClick={() => setModalState(false)}
+                color="blue500"
+              >
+                <Vector name="close" color="neutral0" width={16} height={16} />
+              </S.ModalClose>
 
-            <Text as="h2" size={24} weight={600} marginBottom={24}>
-              API
-            </Text>
-
-            <S.DocItem>
-              <S.DocReq>
-                <Text uppercase color="neutral300" size={12} weight={600}>
-                  Url Base
-                </Text>
-              </S.DocReq>
-              <S.DocRes>
-                <Text color="neutral500" size={14}>
-                  https://buscasus.com.br/api
-                </Text>
-              </S.DocRes>
-            </S.DocItem>
-
-            <S.DocItem>
-              <Text size={14} marginBottom={12}>
-                Retornar lista de CIDS10
+              <Text as="h2" size={24} weight={600} marginBottom={24}>
+                API
               </Text>
-              <S.DocReq>
-                <Text uppercase color="neutral300" size={12} weight={600}>
-                  <span className="method">GET</span>{' '}
-                  <span className="url">/cids</span>
+
+              <S.DocItem>
+                <S.DocReq>
+                  <Text uppercase color="neutral300" size={12} weight={600}>
+                    Url Base
+                  </Text>
+                </S.DocReq>
+                <S.DocRes>
+                  <Text color="neutral500" size={14}>
+                    https://buscasus.com.br/api
+                  </Text>
+                </S.DocRes>
+              </S.DocItem>
+
+              <S.DocItem>
+                <Text size={14} marginBottom={12}>
+                  Retornar lista de CIDS10
                 </Text>
-              </S.DocReq>
-              <S.DocRes>
-                <Text
-                  uppercase
-                  color="neutral600"
-                  size={12}
-                  weight={600}
-                  marginBottom={12}
-                >
-                  Response
-                </Text>
-                <S.DocCode>
-                  {`{
+                <S.DocReq>
+                  <Text uppercase color="neutral300" size={12} weight={600}>
+                    <span className="method">GET</span>{' '}
+                    <span className="url">/cids</span>
+                  </Text>
+                </S.DocReq>
+                <S.DocRes>
+                  <Text
+                    uppercase
+                    color="neutral600"
+                    size={12}
+                    weight={600}
+                    marginBottom={12}
+                  >
+                    Response
+                  </Text>
+                  <S.DocCode>
+                    {`{
   "results": [
     {
       "statistics": [
@@ -106,33 +112,33 @@ const Doc = () => {
     }
   ]
 }`}
-                </S.DocCode>
-              </S.DocRes>
-            </S.DocItem>
+                  </S.DocCode>
+                </S.DocRes>
+              </S.DocItem>
 
-            <S.DocItem>
-              <Text size={14} marginBottom={12}>
-                Retorna um CID10 e suas estátisticas
-              </Text>
-              <S.DocReq>
-                <Text uppercase color="neutral300" size={12} weight={600}>
-                  <span className="method">GET</span>{' '}
-                  <span className="url">/cids/</span>
-                  <span className="param">{`{cid}`}</span>
+              <S.DocItem>
+                <Text size={14} marginBottom={12}>
+                  Retorna um CID10 e suas estátisticas
                 </Text>
-              </S.DocReq>
-              <S.DocRes>
-                <Text
-                  uppercase
-                  color="neutral600"
-                  size={12}
-                  weight={600}
-                  marginBottom={12}
-                >
-                  Response
-                </Text>
-                <S.DocCode>
-                  {`{
+                <S.DocReq>
+                  <Text uppercase color="neutral300" size={12} weight={600}>
+                    <span className="method">GET</span>{' '}
+                    <span className="url">/cids/</span>
+                    <span className="param">{`{cid}`}</span>
+                  </Text>
+                </S.DocReq>
+                <S.DocRes>
+                  <Text
+                    uppercase
+                    color="neutral600"
+                    size={12}
+                    weight={600}
+                    marginBottom={12}
+                  >
+                    Response
+                  </Text>
+                  <S.DocCode>
+                    {`{
   "statistics": [
     {
       "cost_year": 35.95,
@@ -172,33 +178,33 @@ const Doc = () => {
   "name": "Cólera",
   "__v": 1
 }`}
-                </S.DocCode>
-              </S.DocRes>
-            </S.DocItem>
+                  </S.DocCode>
+                </S.DocRes>
+              </S.DocItem>
 
-            <S.DocItem>
-              <Text size={14} marginBottom={12}>
-                Retorna as estátisticas de um determinado CID10
-              </Text>
-              <S.DocReq>
-                <Text uppercase color="neutral300" size={12} weight={600}>
-                  <span className="method">GET</span>{' '}
-                  <span className="url">/statistics/</span>
-                  <span className="param">{`{cid}`}</span>
+              <S.DocItem>
+                <Text size={14} marginBottom={12}>
+                  Retorna as estátisticas de um determinado CID10
                 </Text>
-              </S.DocReq>
-              <S.DocRes>
-                <Text
-                  uppercase
-                  color="neutral600"
-                  size={12}
-                  weight={600}
-                  marginBottom={12}
-                >
-                  Response
-                </Text>
-                <S.DocCode>
-                  {`{
+                <S.DocReq>
+                  <Text uppercase color="neutral300" size={12} weight={600}>
+                    <span className="method">GET</span>{' '}
+                    <span className="url">/statistics/</span>
+                    <span className="param">{`{cid}`}</span>
+                  </Text>
+                </S.DocReq>
+                <S.DocRes>
+                  <Text
+                    uppercase
+                    color="neutral600"
+                    size={12}
+                    weight={600}
+                    marginBottom={12}
+                  >
+                    Response
+                  </Text>
+                  <S.DocCode>
+                    {`{
   "results": [
     {
       "cost_year": 35.95,
@@ -237,35 +243,35 @@ const Doc = () => {
     }
   ]
 }`}
-                </S.DocCode>
-              </S.DocRes>
-            </S.DocItem>
+                  </S.DocCode>
+                </S.DocRes>
+              </S.DocItem>
 
-            <S.DocItem>
-              <Text size={14} marginBottom={12}>
-                Retorna as estátisticas de um determinado ano de um CID10
-              </Text>
-              <S.DocReq>
-                <Text uppercase color="neutral300" size={12} weight={600}>
-                  <span className="method">GET</span>{' '}
-                  <span className="url">/statistics/</span>
-                  <span className="param">{`{cid}`}</span>
-                  <span className="url">/</span>
-                  <span className="param">{`{year}`}</span>
+              <S.DocItem>
+                <Text size={14} marginBottom={12}>
+                  Retorna as estátisticas de um determinado ano de um CID10
                 </Text>
-              </S.DocReq>
-              <S.DocRes>
-                <Text
-                  uppercase
-                  color="neutral600"
-                  size={12}
-                  weight={600}
-                  marginBottom={12}
-                >
-                  Response
-                </Text>
-                <S.DocCode>
-                  {`{
+                <S.DocReq>
+                  <Text uppercase color="neutral300" size={12} weight={600}>
+                    <span className="method">GET</span>{' '}
+                    <span className="url">/statistics/</span>
+                    <span className="param">{`{cid}`}</span>
+                    <span className="url">/</span>
+                    <span className="param">{`{year}`}</span>
+                  </Text>
+                </S.DocReq>
+                <S.DocRes>
+                  <Text
+                    uppercase
+                    color="neutral600"
+                    size={12}
+                    weight={600}
+                    marginBottom={12}
+                  >
+                    Response
+                  </Text>
+                  <S.DocCode>
+                    {`{
   "cost_year": 35.95,
   "cost_per_case": 35.95,
   "age": 66,
@@ -300,11 +306,12 @@ const Doc = () => {
   },
   "__v": 0
 }`}
-                </S.DocCode>
-              </S.DocRes>
-            </S.DocItem>
-          </S.ModalDialogContent>
-        </S.ModalDialog>
+                  </S.DocCode>
+                </S.DocRes>
+              </S.DocItem>
+            </S.ModalDialogContent>
+          </S.ModalDialog>
+        </TouchScrollable>
       </S.DocWrapper>
     </>
   )
